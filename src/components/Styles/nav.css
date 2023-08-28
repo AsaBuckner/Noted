@@ -1,0 +1,22 @@
+.nav-bar {
+    position:fixed;
+    right: 1vw;
+    padding:1vh;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.nav-bar button{
+    text-decoration: none;
+    background: none;
+    border: none;
+    color: #FFF;
+    opacity: 40%;
+    text-align: center;
+    font-family: "Spartan ExtraLight";
+    font-size:2vw;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-left: 2vw;
+}

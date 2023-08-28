@@ -1,0 +1,158 @@
+
+.Wrapper{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.P{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.Arrow{
+    display:block;
+    position:relative;
+    top:37vh;
+
+}
+
+
+.one {
+align-items: center;
+flex-direction: column;
+}
+.one h1 {
+font-size:8vw;
+}
+.one p {
+width: 60vw;
+margin-top: 9vh;
+color: rgba(100, 100, 100, 90%);
+}
+
+
+
+
+.two {
+    align-items: center;
+    flex-direction:row; 
+    justify-content: space-around;
+}
+.two p {
+    width: 40vw;
+}
+
+
+.Preview {
+    margin-top: 30px;
+    height: 60vw;
+}
+
+
+
+
+.three {
+    align-items: center;
+    flex-direction:row; 
+    justify-content: space-around;
+}
+.three p{
+    width:25vw;
+
+}
+
+.four {
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.four p{
+  width:60vw;
+}
+
+#iphone {
+    display: block;
+    position: relative;
+    right: 20vw;
+    width: 60vw;
+    
+}
+
+
+.five {
+    align-items: center;
+    flex-direction:column; 
+    justify-content: space-around;
+}
+
+.five p{
+    width: 60vw;
+}
+
+
+.six {
+    align-items: center;
+    flex-direction:row; 
+    justify-content: space-around;
+}
+.nav-bar {
+    position:fixed;
+    right: 1vw;
+    padding:1vh;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.nav-bar button{
+    text-decoration: none;
+    background: none;
+    border: none;
+    color: #FFF;
+    opacity: 40%;
+    text-align: center;
+    font-family: "Spartan ExtraLight";
+    font-size:2vw;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-left: 2vw;
+}
+html {
+    color: #FFF;
+    text-align: center;
+    font-family: "Spartan ExtraLight";
+    font-size:30px;
+    font-style: normal;
+    font-weight: 100px;
+    line-height: normal;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight:  100;
+  }
+  
+  ol, ul {
+    list-style: normal;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+.Wrapper{
+    background: var(--web-nd-app-bgrnd, linear-gradient(147deg, #070031 0%, #08003C 45.31%, #050021 100%));
+}
+
+/*# sourceMappingURL=/src.a2b27638.css.map */

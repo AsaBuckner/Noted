@@ -1,0 +1,101 @@
+
+.Wrapper{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.P{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.Arrow{
+    display:block;
+    position:relative;
+    top:37vh;
+
+}
+
+
+.one {
+align-items: center;
+flex-direction: column;
+}
+.one h1 {
+font-size:8vw;
+}
+.one p {
+width: 60vw;
+margin-top: 9vh;
+color: rgba(100, 100, 100, 90%);
+}
+
+
+
+
+.two {
+    align-items: center;
+    flex-direction:row; 
+    justify-content: space-around;
+}
+.two p {
+    width: 40vw;
+}
+
+
+.Preview {
+    margin-top: 30px;
+    height: 60vw;
+}
+
+
+
+
+.three {
+    align-items: center;
+    flex-direction:row; 
+    justify-content: space-around;
+}
+.three p{
+    width:25vw;
+
+}
+
+.four {
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.four p{
+  width:60vw;
+}
+
+#iphone {
+    display: block;
+    position: relative;
+    right: 20vw;
+    width: 60vw;
+    
+}
+
+
+.five {
+    align-items: center;
+    flex-direction:column; 
+    justify-content: space-around;
+}
+
+.five p{
+    width: 60vw;
+}
+
+
+.six {
+    align-items: center;
+    flex-direction:row; 
+    justify-content: space-around;
+}
