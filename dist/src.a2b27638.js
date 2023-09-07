@@ -29498,9 +29498,149 @@ exports.default = Login;
 var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function Login() {
-  return /*#__PURE__*/_react.default.createElement("div", null, "Login");
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Login"), /*#__PURE__*/_react.default.createElement("line", null));
 }
-},{"react":"node_modules/react/index.js"}],"src/index.css":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"src/components/Tile.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _react = _interopRequireDefault(require("react"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var Tile = function Tile(id) {};
+var _default = Tile;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"src/components/Styles/Hub.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/PersonalHub.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _react = _interopRequireDefault(require("react"));
+require("./Styles/Hub.css");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function PersonalHub(props) {
+  var cubes = props.cubes;
+  return cubes.map(function (cube, index) {
+    switch (cube) {
+      case "Note":
+        return /*#__PURE__*/_react.default.createElement("div", {
+          onClick: function onClick() {
+            return console.log(index);
+          },
+          key: "Note-".concat(index),
+          className: "1x1 Note"
+        }, /*#__PURE__*/_react.default.createElement("p", null, "Note"));
+      case "Memo":
+        return /*#__PURE__*/_react.default.createElement("div", {
+          onClick: function onClick() {
+            return console.log(index);
+          },
+          key: "Memo-".concat(index),
+          className: "1x1 Note"
+        }, /*#__PURE__*/_react.default.createElement("p", null, "Memo"));
+      case "List":
+        return /*#__PURE__*/_react.default.createElement("div", {
+          onClick: function onClick() {
+            return console.log(index);
+          },
+          key: "List-".concat(index),
+          className: "2x1 Note"
+        }, /*#__PURE__*/_react.default.createElement("p", null, "List"));
+      case "Timer":
+        return /*#__PURE__*/_react.default.createElement("div", {
+          key: "Timer-".concat(index),
+          className: "1x1 Note"
+        }, /*#__PURE__*/_react.default.createElement("p", null, "Timer"));
+      case "Album":
+        return /*#__PURE__*/_react.default.createElement("div", {
+          key: "Album-".concat(index),
+          className: "1x1 Note"
+        }, /*#__PURE__*/_react.default.createElement("p", null, "Album"));
+      default:
+        return null;
+      // Return null for unknown types
+    }
+  });
+}
+var _default = PersonalHub;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./Styles/Hub.css":"src/components/Styles/Hub.css"}],"src/components/Hub.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Hub;
+var _react = _interopRequireWildcard(require("react"));
+var _Tile = require("./Tile");
+var _PersonalHub = _interopRequireDefault(require("./PersonalHub"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i.return && (_r = _i.return(), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function Hub() {
+  var _useState = (0, _react.useState)([]),
+    _useState2 = _slicedToArray(_useState, 2),
+    cubes = _useState2[0],
+    setCubes = _useState2[1];
+  function _onClick(type) {
+    setCubes([].concat(_toConsumableArray(cubes), [type]));
+    console.log(cubes);
+  }
+  return /*#__PURE__*/_react.default.createElement("div", {
+    id: "wrapper"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    id: "thalf"
+  }, /*#__PURE__*/_react.default.createElement("h1", null, "Hub"), /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("a", null, "Personal Hub"), /*#__PURE__*/_react.default.createElement("a", null, "Shared Hub"), /*#__PURE__*/_react.default.createElement("a", null, "Settings")), /*#__PURE__*/_react.default.createElement("div", {
+    id: "h-bar"
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    id: "bhalf"
+  }, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("p", {
+    onClick: function onClick() {
+      _onClick("Note");
+    }
+  }, "Note"), /*#__PURE__*/_react.default.createElement("p", {
+    onClick: function onClick() {
+      _onClick("Memo");
+    }
+  }, "Memo"), /*#__PURE__*/_react.default.createElement("p", {
+    onClick: function onClick() {
+      _onClick("List");
+    }
+  }, "List"), /*#__PURE__*/_react.default.createElement("p", {
+    onClick: function onClick() {
+      _onClick("Timer");
+    }
+  }, "Timer"), /*#__PURE__*/_react.default.createElement("p", {
+    onClick: function onClick() {
+      _onClick("Album");
+    }
+  }, "Album")), /*#__PURE__*/_react.default.createElement("div", {
+    id: "v-bar"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    id: "hub"
+  }, /*#__PURE__*/_react.default.createElement(_PersonalHub.default, {
+    cubes: cubes
+  }))));
+}
+},{"react":"node_modules/react/index.js","./Tile":"src/components/Tile.js","./PersonalHub":"src/components/PersonalHub.js"}],"src/index.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
@@ -29515,21 +29655,24 @@ var _react = _interopRequireDefault(require("react"));
 var _reactRouterDom = require("react-router-dom");
 var _Home = _interopRequireDefault(require("./components/Home"));
 var _Login = _interopRequireDefault(require("./components/Login"));
+var _Hub = _interopRequireDefault(require("./components/Hub"));
 require("./index.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function App() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "Wrapper"
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    strict: true,
+    path: '/login',
+    component: _Login.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: '/Hub',
+    component: _Hub.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: '/',
     component: _Home.default
-  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: '/Login',
-    component: _Login.default
   }))));
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/Home":"src/components/Home.js","./components/Login":"src/components/Login.js","./index.css":"src/index.css"}],"src/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/Home":"src/components/Home.js","./components/Login":"src/components/Login.js","./components/Hub":"src/components/Hub.js","./index.css":"src/index.css"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -29562,7 +29705,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51350" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49485" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

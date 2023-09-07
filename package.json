@@ -2,6 +2,7 @@
   "dependencies": {
     "components": "^0.1.0",
     "express": "^4.18.2",
+    "express-openid-connect": "^2.16.0",
     "js-compiler": "^1.0.4",
     "nodemon": "^2.0.22",
     "react": "^17.0.2",

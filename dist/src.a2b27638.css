@@ -13,10 +13,8 @@
 }
 
 .Arrow{
-    display:block;
-    position:relative;
-    top:37vh;
-
+position:absolute;
+bottom: 3vh;
 }
 
 
@@ -78,7 +76,7 @@ color: rgba(100, 100, 100, 90%);
     display: block;
     position: relative;
     right: 20vw;
-    width: 60vw;
+    width:50vw;
     
 }
 
@@ -121,11 +119,71 @@ color: rgba(100, 100, 100, 90%);
     line-height: normal;
     margin-left: 2vw;
 }
+#wrapper {
+    height: 100vh;
+    width: 100vw;
+}
+
+.Note {
+    text-align: center;
+    width: 15vw;
+    height:15vw;
+    background-color: blue;
+    margin: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#h-bar{
+    position: absolute;
+    top:15vh;
+    right: 5vw;
+    width: 60vw;
+    height:1vw;
+    background-color:white;
+    border-radius: 30vw;
+}
+
+#v-bar{
+    position: absolute;
+    left: 25vw;
+    width: 1vw;
+    height:40vw;
+    border-radius: 20vw;
+    background-color:white;
+}
+#thalf{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#bhalf {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#hub {
+    width: 60vw;
+    height: 70vh;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    border: 2px solid red;
+}
+
+ul p {
+    margin-bottom:5vh;
+}
+
 html {
     color: #FFF;
     text-align: center;
     font-family: "Spartan ExtraLight";
-    font-size:30px;
+    font-size:2vw;
     font-style: normal;
     font-weight: 100px;
     line-height: normal;
