@@ -1,46 +1,53 @@
 import React, {useState} from "react";
 import {Tile} from "./Tile"
 import PersonalHub from "./PersonalHub";
-
+import SharedHub from './SharedHub'
 
 export default function Hub() {
 
 const [cubes, setCubes] = useState([]);
-
-function onClick(type){
+const [board, setBoard] = useState("personal")
+function addTile(type){
     setCubes([...cubes, type]);
     console.log(cubes)
+}
+
+function boardChange(type){
+    setBoard(type);
+
 }
 
     return(
         <div id="wrapper">
             <div id="thalf">
-                <h1>Hub</h1>
+                <h1>Noted</h1>
 
-                <ul>
-                    <a>Personal Hub</a>
-                    <a>Shared Hub</a>
-                    <a>Settings</a>
+                <ul className="boardBttns">
+                    <button onClick={()=>{boardChange("personal")}} className={board === "personal" ? "selected" : null}>Personal Hub</button>
+                    <button onClick={()=>{boardChange("shared")}} className={board === "shared" ? "selected" : null}>Shared Hub</button>
+                    <button onClick={()=>{boardChange("settings")}} className={board === "settings" ? "selected" : null}>Settings</button>
                 </ul>
 
                 <div id="h-bar"></div>
             </div>
 
-            <div id="bhalf">
-                <ul>
-                    <p onClick={() =>{onClick("Note")}}>Note</p>
-                    <p onClick={() =>{onClick("Memo")}}>Memo</p>
-                    <p onClick={() =>{onClick("List")}}>List</p>
-                    <p onClick={() =>{onClick("Timer")}}>Timer</p>
-                    <p onClick={() =>{onClick("Album")}}>Album</p>
-                </ul>
+          
+            <ul className="tileBttns">
+                <p onClick={() =>{addTile("Note")}}>Note</p>
+                <p onClick={() =>{addTile("Memo")}}>Memo</p>
+                <p onClick={() =>{addTile("List")}}>List</p>
+                <p onClick={() =>{addTile("Timer")}}>Timer</p>
+                <p onClick={() =>{addTile("Album")}}>Album</p>
+            </ul>
 
-                <div id="v-bar"></div>
+            <div id="v-bar"></div>
 
-                <div id="hub">
-                    <PersonalHub cubes = {cubes}/>
-                </div>
+            <div id="hub">
+            {board === "personal" && <PersonalHub cubes = {cubes}/>}
+            {board === "shared" && <SharedHub cubes = {cubes}/>}
+            {/* {board === "settings" && <SettingsHub />} */}
             </div>
+            
 
         </div>
     )

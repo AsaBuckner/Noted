@@ -1,17 +1,58 @@
+ul p {
+    margin-bottom:5vh;
+}
+
+button{
+    background: none;
+    border : none;
+    color: white;
+}
+
+h1 {
+    position:absolute;
+    top:5vh;
+    left: 5vw;
+}
+
+.selected{
+    text-decoration:underline;
+}
+
 #wrapper {
     height: 100vh;
     width: 100vw;
 }
 
+.tileBttns {
+    position:absolute;
+    top:35vh;
+    left:9vw;
+}
+
+.boardBttns {
+    display: flex;
+    justify-content: space-around;
+    position:absolute;
+    top:8vh;
+    right:5vw;
+    width: 60vw;
+}
+
+
 .Note {
     text-align: center;
     width: 15vw;
     height:15vw;
-    background-color: blue;
-    margin: 2vh;
+    background: var(--Blue---Light, linear-gradient(221deg, #1800A8 -0.86%, #030168 50.1%, #080044 101.33%));
+    margin: 1vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 2vw;
+}
+
+.lrg {
+    width: 32vw;
 }
 
 #h-bar{
@@ -19,41 +60,34 @@
     top:15vh;
     right: 5vw;
     width: 60vw;
-    height:1vw;
+    height:.5vw;
     background-color:white;
-    border-radius: 30vw;
+    -radius: 30vw;
+    opacity: 50%;
 }
 
 #v-bar{
     position: absolute;
+    top: 27vh;
     left: 25vw;
-    width: 1vw;
-    height:40vw;
-    border-radius: 20vw;
+    width: .5vw;
+    height:57vh;
+    -radius: 20vw;
     background-color:white;
-}
-#thalf{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
+    opacity: 50%;
 }
 
-#bhalf {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
 
 #hub {
-    width: 60vw;
+    position: absolute;
+    top: 20vh;
+    left: 30vw;
+    width: 68vw;
     height: 70vh;
     display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    border: 2px solid red;
+   flex-wrap: wrap;
+    align-content: flex-start;
+    overflow: auto;
 }
 
-ul p {
-    margin-bottom:5vh;
-}
+

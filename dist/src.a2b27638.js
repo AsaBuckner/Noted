@@ -29536,7 +29536,7 @@ function PersonalHub(props) {
             return console.log(index);
           },
           key: "Note-".concat(index),
-          className: "1x1 Note"
+          className: "Note"
         }, /*#__PURE__*/_react.default.createElement("p", null, "Note"));
       case "Memo":
         return /*#__PURE__*/_react.default.createElement("div", {
@@ -29544,7 +29544,7 @@ function PersonalHub(props) {
             return console.log(index);
           },
           key: "Memo-".concat(index),
-          className: "1x1 Note"
+          className: "Note"
         }, /*#__PURE__*/_react.default.createElement("p", null, "Memo"));
       case "List":
         return /*#__PURE__*/_react.default.createElement("div", {
@@ -29552,17 +29552,17 @@ function PersonalHub(props) {
             return console.log(index);
           },
           key: "List-".concat(index),
-          className: "2x1 Note"
+          className: "Note lrg"
         }, /*#__PURE__*/_react.default.createElement("p", null, "List"));
       case "Timer":
         return /*#__PURE__*/_react.default.createElement("div", {
           key: "Timer-".concat(index),
-          className: "1x1 Note"
+          className: "Note"
         }, /*#__PURE__*/_react.default.createElement("p", null, "Timer"));
       case "Album":
         return /*#__PURE__*/_react.default.createElement("div", {
           key: "Album-".concat(index),
-          className: "1x1 Note"
+          className: "Note"
         }, /*#__PURE__*/_react.default.createElement("p", null, "Album"));
       default:
         return null;
@@ -29572,7 +29572,59 @@ function PersonalHub(props) {
 }
 var _default = PersonalHub;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./Styles/Hub.css":"src/components/Styles/Hub.css"}],"src/components/Hub.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Styles/Hub.css":"src/components/Styles/Hub.css"}],"src/components/SharedHub.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = SharedHub;
+var _react = _interopRequireDefault(require("react"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function SharedHub(props) {
+  var cubes = props.cubes;
+  return cubes.map(function (cube, index) {
+    switch (cube) {
+      case "Note":
+        return /*#__PURE__*/_react.default.createElement("div", {
+          onClick: function onClick() {
+            return console.log(index);
+          },
+          key: "Note-".concat(index),
+          className: "Note"
+        }, /*#__PURE__*/_react.default.createElement("p", null, "Note"));
+      case "Memo":
+        return /*#__PURE__*/_react.default.createElement("div", {
+          onClick: function onClick() {
+            return console.log(index);
+          },
+          key: "Memo-".concat(index),
+          className: "Note"
+        }, /*#__PURE__*/_react.default.createElement("p", null, "Memo"));
+      case "List":
+        return /*#__PURE__*/_react.default.createElement("div", {
+          onClick: function onClick() {
+            return console.log(index);
+          },
+          key: "List-".concat(index),
+          className: "Note lrg"
+        }, /*#__PURE__*/_react.default.createElement("p", null, "List"));
+      case "Timer":
+        return /*#__PURE__*/_react.default.createElement("div", {
+          key: "Timer-".concat(index),
+          className: "Note"
+        }, /*#__PURE__*/_react.default.createElement("p", null, "Timer"));
+      case "Album":
+        return /*#__PURE__*/_react.default.createElement("div", {
+          key: "Album-".concat(index),
+          className: "Note"
+        }, /*#__PURE__*/_react.default.createElement("p", null, "Album"));
+      default:
+        return null;
+    }
+  });
+}
+},{"react":"node_modules/react/index.js"}],"src/components/Hub.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29582,6 +29634,7 @@ exports.default = Hub;
 var _react = _interopRequireWildcard(require("react"));
 var _Tile = require("./Tile");
 var _PersonalHub = _interopRequireDefault(require("./PersonalHub"));
+var _SharedHub = _interopRequireDefault(require("./SharedHub"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -29600,47 +29653,73 @@ function Hub() {
     _useState2 = _slicedToArray(_useState, 2),
     cubes = _useState2[0],
     setCubes = _useState2[1];
-  function _onClick(type) {
+  var _useState3 = (0, _react.useState)("personal"),
+    _useState4 = _slicedToArray(_useState3, 2),
+    board = _useState4[0],
+    setBoard = _useState4[1];
+  function addTile(type) {
     setCubes([].concat(_toConsumableArray(cubes), [type]));
     console.log(cubes);
+  }
+  function boardChange(type) {
+    setBoard(type);
   }
   return /*#__PURE__*/_react.default.createElement("div", {
     id: "wrapper"
   }, /*#__PURE__*/_react.default.createElement("div", {
     id: "thalf"
-  }, /*#__PURE__*/_react.default.createElement("h1", null, "Hub"), /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("a", null, "Personal Hub"), /*#__PURE__*/_react.default.createElement("a", null, "Shared Hub"), /*#__PURE__*/_react.default.createElement("a", null, "Settings")), /*#__PURE__*/_react.default.createElement("div", {
-    id: "h-bar"
-  })), /*#__PURE__*/_react.default.createElement("div", {
-    id: "bhalf"
-  }, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("p", {
+  }, /*#__PURE__*/_react.default.createElement("h1", null, "Noted"), /*#__PURE__*/_react.default.createElement("ul", {
+    className: "boardBttns"
+  }, /*#__PURE__*/_react.default.createElement("button", {
     onClick: function onClick() {
-      _onClick("Note");
+      boardChange("personal");
+    },
+    className: board === "personal" ? "selected" : null
+  }, "Personal Hub"), /*#__PURE__*/_react.default.createElement("button", {
+    onClick: function onClick() {
+      boardChange("shared");
+    },
+    className: board === "shared" ? "selected" : null
+  }, "Shared Hub"), /*#__PURE__*/_react.default.createElement("button", {
+    onClick: function onClick() {
+      boardChange("settings");
+    },
+    className: board === "settings" ? "selected" : null
+  }, "Settings")), /*#__PURE__*/_react.default.createElement("div", {
+    id: "h-bar"
+  })), /*#__PURE__*/_react.default.createElement("ul", {
+    className: "tileBttns"
+  }, /*#__PURE__*/_react.default.createElement("p", {
+    onClick: function onClick() {
+      addTile("Note");
     }
   }, "Note"), /*#__PURE__*/_react.default.createElement("p", {
     onClick: function onClick() {
-      _onClick("Memo");
+      addTile("Memo");
     }
   }, "Memo"), /*#__PURE__*/_react.default.createElement("p", {
     onClick: function onClick() {
-      _onClick("List");
+      addTile("List");
     }
   }, "List"), /*#__PURE__*/_react.default.createElement("p", {
     onClick: function onClick() {
-      _onClick("Timer");
+      addTile("Timer");
     }
   }, "Timer"), /*#__PURE__*/_react.default.createElement("p", {
     onClick: function onClick() {
-      _onClick("Album");
+      addTile("Album");
     }
   }, "Album")), /*#__PURE__*/_react.default.createElement("div", {
     id: "v-bar"
   }), /*#__PURE__*/_react.default.createElement("div", {
     id: "hub"
-  }, /*#__PURE__*/_react.default.createElement(_PersonalHub.default, {
+  }, board === "personal" && /*#__PURE__*/_react.default.createElement(_PersonalHub.default, {
     cubes: cubes
-  }))));
+  }), board === "shared" && /*#__PURE__*/_react.default.createElement(_SharedHub.default, {
+    cubes: cubes
+  })));
 }
-},{"react":"node_modules/react/index.js","./Tile":"src/components/Tile.js","./PersonalHub":"src/components/PersonalHub.js"}],"src/index.css":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Tile":"src/components/Tile.js","./PersonalHub":"src/components/PersonalHub.js","./SharedHub":"src/components/SharedHub.js"}],"src/index.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
