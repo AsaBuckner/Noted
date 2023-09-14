@@ -2,6 +2,8 @@ import React from 'react';
 import './Styles/Home.css'
 import Iphone from '../imgs/Iphone1.png';
 import Preview from '../imgs/Preview1.png'
+import Login from './Login';
+import SignUp from './Signup';
 import Nav from './Nav'
 
 export default function Home(){
@@ -44,8 +46,11 @@ export default function Home(){
     </div>
 
     <div className='P six' >
-      {/* <Login/>
-      <SignUp/> */}
+      <Login/>
+
+      <div className='divider'/>
+
+      <SignUp/>
     </div>
 
 

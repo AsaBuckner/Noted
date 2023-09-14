@@ -22,17 +22,20 @@ bottom: 3vh;
 align-items: center;
 flex-direction: column;
 }
+
 .one h1 {
 font-size:8vw;
+position:absolute;
+right:0;
+top:30vh;
+left:15px;
 }
+
 .one p {
 width: 60vw;
 margin-top: 9vh;
 color: rgba(100, 100, 100, 90%);
 }
-
-
-
 
 .two {
     align-items: center;
@@ -91,6 +94,10 @@ color: rgba(100, 100, 100, 90%);
     width: 60vw;
 }
 
+.divider{
+    width: 1.5vw;
+    height: 80vh;
+    background: rgba(0, 23, 147, 0.28);}
 
 .six {
     align-items: center;

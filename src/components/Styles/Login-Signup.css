@@ -1,0 +1,36 @@
+form {
+    width: 40vw;;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    border:2px solid red;
+}
+
+.Input{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.Input input{
+    width:100%;
+    height: 5vh;
+    background: rgba(0, 23, 147, 0.28);    border: none;
+    text-align: center;
+    font-size: 1.5vw;
+}
+.Input .name {
+    width:45%;
+    height: 5vh;
+    background: rgba(0, 23, 147, 0.28);    border: none;
+}
+
+.Input label{
+    margin-bottom: 3vh;
+}
+.nameInputWrapper {
+width: 100%;
+display: flex;
+justify-content: space-between;
+}
