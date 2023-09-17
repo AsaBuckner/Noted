@@ -32647,7 +32647,7 @@ function SignUp() {
   return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("h1", null, "Sign Up"), /*#__PURE__*/_react.default.createElement("div", {
     className: "Input"
   }, /*#__PURE__*/_react.default.createElement("label", null, "Name"), /*#__PURE__*/_react.default.createElement("div", {
-    className: "nameInputWrapper"
+    id: "name"
   }, /*#__PURE__*/_react.default.createElement("input", {
     className: "name",
     type: "text",
@@ -32717,7 +32717,8 @@ function Home() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "Wrapper"
   }, /*#__PURE__*/_react.default.createElement(_Nav.default, null), /*#__PURE__*/_react.default.createElement("div", {
-    className: "P one"
+    className: "P",
+    id: "one"
   }, /*#__PURE__*/_react.default.createElement("h1", null, "Noted"), /*#__PURE__*/_react.default.createElement("p", null, " \"Where digital note-sharing becomes a gateway to seamless collaboration and organized creativity.\" "), /*#__PURE__*/_react.default.createElement("div", {
     className: "Arrow"
   }, /*#__PURE__*/_react.default.createElement("svg", {
@@ -32731,21 +32732,26 @@ function Home() {
     fill: "white",
     fillOpacity: "0.4"
   })))), /*#__PURE__*/_react.default.createElement("div", {
-    className: "P two"
+    className: "P",
+    id: "two"
   }, /*#__PURE__*/_react.default.createElement("p", null, "Welcome to HuB, the ultimate digital note-taking oasis! Whether you're a student, professional, or just someone who loves jotting down ideas, HuB has got you covered. With a sleek and user-friendly interface, managing your notes has never been this fun and intuitive. Dive in and experience the joy of organized thoughts!"), /*#__PURE__*/_react.default.createElement("img", {
     className: "Preview",
     src: _Preview.default
-  })), /*#__PURE__*/_react.default.createElement("div", {
-    className: "P three"
+  }), /*#__PURE__*/_react.default.createElement("div", null)), /*#__PURE__*/_react.default.createElement("div", {
+    className: "P",
+    id: "three"
   }, /*#__PURE__*/_react.default.createElement("p", null, "Express yourself with HuB's customizable themes! Choose from a range of eye-catching styles that match your personality and set the perfect mood for your note-taking journey. From vibrant colors to calming pastels, make HuB truly yours.")), /*#__PURE__*/_react.default.createElement("div", {
-    className: "P four"
+    className: "P",
+    id: "four"
   }, /*#__PURE__*/_react.default.createElement("p", null, "Never miss a beat with HuB's built-in reminder and notification system. Stay on top of your tasks and deadlines effortlessly. With HuB, you'll always be on track and ready to conquer your day!"), /*#__PURE__*/_react.default.createElement("img", {
     id: "iphone",
     src: _Iphone.default
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: "P five"
+    className: "P",
+    id: "five"
   }, /*#__PURE__*/_react.default.createElement("img", null), /*#__PURE__*/_react.default.createElement("p", null, "Rest assured, your privacy is of utmost importance to us. HuB ensures your notes and shared content remain secure and accessible only to those you invite. Enjoy a safe and private digital space to express yourself freely."), /*#__PURE__*/_react.default.createElement("p", null, "Experience the HuB difference today - your go-to destination for all your digital scribbles and collaborative ventures. Join our growing community and elevate your note-taking game to new heights!"), /*#__PURE__*/_react.default.createElement("img", null)), /*#__PURE__*/_react.default.createElement("div", {
-    className: "P six"
+    className: "P",
+    id: "six"
   }, /*#__PURE__*/_react.default.createElement(_Login.default, null), /*#__PURE__*/_react.default.createElement("div", {
     className: "divider"
   }), /*#__PURE__*/_react.default.createElement(_Signup.default, null)));
@@ -32794,7 +32800,8 @@ function PersonalHub(props) {
             return console.log(index);
           },
           key: "Memo-".concat(index),
-          className: "Note"
+          className: "Note",
+          id: "Memo"
         }, /*#__PURE__*/_react.default.createElement("p", null, "Memo"));
       case "List":
         return /*#__PURE__*/_react.default.createElement("div", {
@@ -32911,15 +32918,15 @@ function Hub() {
     setCubes([].concat(_toConsumableArray(cubes), [type]));
     console.log(cubes);
   }
-  function boardChange(type) {
-    setBoard(type);
+  function boardChange(board) {
+    setBoard(board);
   }
   return /*#__PURE__*/_react.default.createElement("div", {
     id: "wrapper"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    id: "thalf"
+    id: "board_Nav"
   }, /*#__PURE__*/_react.default.createElement("h1", null, "Noted"), /*#__PURE__*/_react.default.createElement("ul", {
-    className: "boardBttns"
+    className: "board_Bottons"
   }, /*#__PURE__*/_react.default.createElement("button", {
     onClick: function onClick() {
       boardChange("personal");
@@ -32936,9 +32943,9 @@ function Hub() {
     },
     className: board === "settings" ? "selected" : null
   }, "Settings")), /*#__PURE__*/_react.default.createElement("div", {
-    id: "h-bar"
+    id: "h_Divider"
   })), /*#__PURE__*/_react.default.createElement("ul", {
-    className: "tileBttns"
+    className: "tile_Bottons"
   }, /*#__PURE__*/_react.default.createElement("p", {
     onClick: function onClick() {
       addTile("Note");
@@ -32960,7 +32967,7 @@ function Hub() {
       addTile("Album");
     }
   }, "Album")), /*#__PURE__*/_react.default.createElement("div", {
-    id: "v-bar"
+    id: "v_Divider"
   }), /*#__PURE__*/_react.default.createElement("div", {
     id: "hub"
   }, board === "personal" && /*#__PURE__*/_react.default.createElement(_PersonalHub.default, {
@@ -32969,6 +32976,10 @@ function Hub() {
     cubes: cubes
   })));
 }
+
+//Need to add State controlled by the Reducer Store 
+// 1. On Open -- Get Existing Tiles // Theme Color
+// 2. Shared Hub -- Get Shared Tiles
 },{"react":"node_modules/react/index.js","./Tile":"src/components/Tile.js","./PersonalHub":"src/components/PersonalHub.js","./SharedHub":"src/components/SharedHub.js"}],"src/index.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
@@ -35808,7 +35819,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50607" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51303" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

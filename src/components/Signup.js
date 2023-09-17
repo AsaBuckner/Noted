@@ -13,7 +13,7 @@ export default function SignUp() {
             Name
           </label>
   
-            <div className='nameInputWrapper'>
+            <div id='name'>
                 <input 
                     className='name'
                     type="text"

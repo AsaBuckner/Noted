@@ -15,7 +15,7 @@ function PersonalHub(props) {
 
             case "Memo":
                 return (
-                    <div onClick={()=>(console.log(index))} key={`Memo-${index}`} className="Note">
+                    <div onClick={()=>(console.log(index))} key={`Memo-${index}`} className="Note" id="Memo">
                         <p>Memo</p>
                     </div>
                 );

@@ -18,12 +18,12 @@ bottom: 3vh;
 }
 
 
-.one {
+#one {
 align-items: center;
 flex-direction: column;
 }
 
-.one h1 {
+#one h1 {
 font-size:8vw;
 position:absolute;
 right:0;
@@ -31,18 +31,18 @@ top:30vh;
 left:15px;
 }
 
-.one p {
+#one p {
 width: 60vw;
 margin-top: 9vh;
 color: rgba(100, 100, 100, 90%);
 }
 
-.two {
+#two {
     align-items: center;
     flex-direction:row; 
     justify-content: space-around;
 }
-.two p {
+#two p {
     width: 40vw;
 }
 
@@ -55,23 +55,23 @@ color: rgba(100, 100, 100, 90%);
 
 
 
-.three {
+#three {
     align-items: center;
     flex-direction:row; 
     justify-content: space-around;
 }
-.three p{
+#three p{
     width:25vw;
 
 }
 
-.four {
+#four {
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
 }
 
-.four p{
+#four p{
   width:60vw;
 }
 
@@ -84,13 +84,13 @@ color: rgba(100, 100, 100, 90%);
 }
 
 
-.five {
+#five {
     align-items: center;
     flex-direction:column; 
     justify-content: space-around;
 }
 
-.five p{
+#five p{
     width: 60vw;
 }
 
@@ -99,7 +99,7 @@ color: rgba(100, 100, 100, 90%);
     height: 80vh;
     background: rgba(0, 23, 147, 0.28);}
 
-.six {
+#six {
     align-items: center;
     flex-direction:row; 
     justify-content: space-around;

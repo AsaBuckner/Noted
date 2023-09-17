@@ -18,12 +18,12 @@ bottom: 3vh;
 }
 
 
-.one {
+#one {
 align-items: center;
 flex-direction: column;
 }
 
-.one h1 {
+#one h1 {
 font-size:8vw;
 position:absolute;
 right:0;
@@ -31,18 +31,18 @@ top:30vh;
 left:15px;
 }
 
-.one p {
+#one p {
 width: 60vw;
 margin-top: 9vh;
 color: rgba(100, 100, 100, 90%);
 }
 
-.two {
+#two {
     align-items: center;
     flex-direction:row; 
     justify-content: space-around;
 }
-.two p {
+#two p {
     width: 40vw;
 }
 
@@ -55,23 +55,23 @@ color: rgba(100, 100, 100, 90%);
 
 
 
-.three {
+#three {
     align-items: center;
     flex-direction:row; 
     justify-content: space-around;
 }
-.three p{
+#three p{
     width:25vw;
 
 }
 
-.four {
+#four {
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
 }
 
-.four p{
+#four p{
   width:60vw;
 }
 
@@ -84,13 +84,13 @@ color: rgba(100, 100, 100, 90%);
 }
 
 
-.five {
+#five {
     align-items: center;
     flex-direction:column; 
     justify-content: space-around;
 }
 
-.five p{
+#five p{
     width: 60vw;
 }
 
@@ -99,7 +99,7 @@ color: rgba(100, 100, 100, 90%);
     height: 80vh;
     background: rgba(0, 23, 147, 0.28);}
 
-.six {
+#six {
     align-items: center;
     flex-direction:row; 
     justify-content: space-around;
@@ -110,7 +110,6 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
-    border:2px solid red;
 }
 
 .Input{
@@ -135,7 +134,7 @@ form {
 .Input label{
     margin-bottom: 3vh;
 }
-.nameInputWrapper {
+#name {
 width: 100%;
 display: flex;
 justify-content: space-between;
@@ -172,7 +171,7 @@ button{
     color: white;
 }
 
-.thalf h1 {
+.board_Nav h1 {
     position:absolute;
     top:5vh;
     left: 5vw;
@@ -187,13 +186,13 @@ button{
     width: 100vw;
 }
 
-.tileBttns {
+.tile_Bottons {
     position:absolute;
     top:35vh;
     left:9vw;
 }
 
-.boardBttns {
+.board_Bottons {
     display: flex;
     justify-content: space-around;
     position:absolute;
@@ -219,7 +218,12 @@ button{
     width: 32vw;
 }
 
-#h-bar{
+#Memo{
+    background: yellow;
+    color: #080044;
+}
+
+#h_Divider{
     position: absolute;
     top:15vh;
     right: 5vw;
@@ -230,7 +234,7 @@ button{
     opacity: 50%;
 }
 
-#v-bar{
+#v_Divider{
     position: absolute;
     top: 27vh;
     left: 25vw;

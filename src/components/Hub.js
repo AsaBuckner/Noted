@@ -5,34 +5,44 @@ import SharedHub from './SharedHub'
 
 export default function Hub() {
 
-const [cubes, setCubes] = useState([]);
-const [board, setBoard] = useState("personal")
-function addTile(type){
-    setCubes([...cubes, type]);
-    console.log(cubes)
-}
+    const [cubes, setCubes] = useState([]);
+    const [board, setBoard] = useState("personal")
 
-function boardChange(type){
-    setBoard(type);
+    function addTile(type){
+        setCubes([...cubes, type]);
+        console.log(cubes)
+    }
 
-}
+    function boardChange(board){
+        setBoard(board);
+    }
 
     return(
+
+
         <div id="wrapper">
-            <div id="thalf">
+
+
+            {/* Board Selection Section -- Personal Hub || Shared Hub || Settings?
+            */}
+
+            <div id="board_Nav">
                 <h1>Noted</h1>
 
-                <ul className="boardBttns">
+                <ul className="board_Bottons">
                     <button onClick={()=>{boardChange("personal")}} className={board === "personal" ? "selected" : null}>Personal Hub</button>
                     <button onClick={()=>{boardChange("shared")}} className={board === "shared" ? "selected" : null}>Shared Hub</button>
                     <button onClick={()=>{boardChange("settings")}} className={board === "settings" ? "selected" : null}>Settings</button>
                 </ul>
 
-                <div id="h-bar"></div>
+                <div id="h_Divider"></div>
             </div>
 
-          
-            <ul className="tileBttns">
+
+            {/*Tile Selection Section -- Add Note / Memo / List / Timr / Album
+            */}
+
+            <ul className="tile_Bottons">
                 <p onClick={() =>{addTile("Note")}}>Note</p>
                 <p onClick={() =>{addTile("Memo")}}>Memo</p>
                 <p onClick={() =>{addTile("List")}}>List</p>
@@ -40,7 +50,11 @@ function boardChange(type){
                 <p onClick={() =>{addTile("Album")}}>Album</p>
             </ul>
 
-            <div id="v-bar"></div>
+
+            <div id="v_Divider"></div>
+
+
+            {/*THE HUB -- Collection of Users Tiles*/}
 
             <div id="hub">
             {board === "personal" && <PersonalHub cubes = {cubes}/>}
@@ -50,5 +64,11 @@ function boardChange(type){
             
 
         </div>
+
+
     )
 }
+
+//Need to add State controlled by the Reducer Store 
+// 1. On Open -- Get Existing Tiles // Theme Color
+// 2. Shared Hub -- Get Shared Tiles 

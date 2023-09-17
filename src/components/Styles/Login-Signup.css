@@ -4,7 +4,6 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
-    border:2px solid red;
 }
 
 .Input{
@@ -29,7 +28,7 @@ form {
 .Input label{
     margin-bottom: 3vh;
 }
-.nameInputWrapper {
+#name {
 width: 100%;
 display: flex;
 justify-content: space-between;

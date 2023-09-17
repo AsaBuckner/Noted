@@ -8,7 +8,7 @@ button{
     color: white;
 }
 
-.thalf h1 {
+.board_Nav h1 {
     position:absolute;
     top:5vh;
     left: 5vw;
@@ -23,13 +23,13 @@ button{
     width: 100vw;
 }
 
-.tileBttns {
+.tile_Bottons {
     position:absolute;
     top:35vh;
     left:9vw;
 }
 
-.boardBttns {
+.board_Bottons {
     display: flex;
     justify-content: space-around;
     position:absolute;
@@ -55,7 +55,12 @@ button{
     width: 32vw;
 }
 
-#h-bar{
+#Memo{
+    background: yellow;
+    color: #080044;
+}
+
+#h_Divider{
     position: absolute;
     top:15vh;
     right: 5vw;
@@ -66,7 +71,7 @@ button{
     opacity: 50%;
 }
 
-#v-bar{
+#v_Divider{
     position: absolute;
     top: 27vh;
     left: 25vw;
