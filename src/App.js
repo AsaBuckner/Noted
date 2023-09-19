@@ -6,14 +6,24 @@ import Hub from './components/Hub'
 import './index.css'
 
 export function App() {
+
+
   return (
     <div className='Wrapper'>
 
       <Router>
         <Switch>
+
+
           <Route path={'/login'} component={Login}/>
+
+          {/*RESTRICTED PATH CHECK FOR LOGIN STATUS */}
           <Route path={'/Hub'} component={Hub}/>
+
+
           <Route path={'/'} component={Home}/>
+
+
         </Switch>
       </Router>
 

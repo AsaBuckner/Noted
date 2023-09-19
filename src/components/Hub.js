@@ -3,10 +3,18 @@ import {Tile} from "./Tile"
 import PersonalHub from "./PersonalHub";
 import SharedHub from './SharedHub'
 
+
+
+
 export default function Hub() {
 
-    const [cubes, setCubes] = useState([]);
+    
+    //CUBES WILL BE SET TO STATE RECIEVED FROM GET REQUEST.
+    const [cubes, setCubes] = useState(GET_PERSONAL_DATA());
     const [board, setBoard] = useState("personal")
+
+    //DISPATCH FUNCTION GETPERSONALDATA ON MOUNT TO DISPLAY USER TILES
+    //DISPATCH FUNCTION GETSHAREDDATA WHEN BOARD SWITCHS TO DISPLAY USER TILES 
 
     function addTile(type){
         setCubes([...cubes, type]);
@@ -23,7 +31,8 @@ export default function Hub() {
         <div id="wrapper">
 
 
-            {/* Board Selection Section -- Personal Hub || Shared Hub || Settings?
+            {/* 
+            Board Selection Section -- Personal Hub || Shared Hub || Settings?
             */}
 
             <div id="board_Nav">
@@ -39,7 +48,8 @@ export default function Hub() {
             </div>
 
 
-            {/*Tile Selection Section -- Add Note / Memo / List / Timr / Album
+            {/*
+            Tile Selection Section -- Add Note / Memo / List / Timr / Album
             */}
 
             <ul className="tile_Bottons">
@@ -54,12 +64,16 @@ export default function Hub() {
             <div id="v_Divider"></div>
 
 
-            {/*THE HUB -- Collection of Users Tiles*/}
+            {/*
+            THE HUB -- Collection of Users Tiles
+            */}
 
             <div id="hub">
             {board === "personal" && <PersonalHub cubes = {cubes}/>}
             {board === "shared" && <SharedHub cubes = {cubes}/>}
-            {/* {board === "settings" && <SettingsHub />} */}
+            {/* 
+            {board === "settings" && <SettingsHub />} 
+            */}
             </div>
             
 
