@@ -41098,8 +41098,8 @@ var GET_SHARED_DATA = "GETSHAREDDATA";
 var POST_TILE = "POSTTILE";
 var UPDATE_TILE = "UPDATETILE";
 var UPDATE_THEME = "UPDATETHEME";
-function deleteTile(userId, id) {
-  _axios.default.delete( /** Url/{userID}/{id}*/).then(function (res) {
+function deleteTile(tileType, userId, tileId) {
+  _axios.default.delete( /** Url/{tileType}/{userId}/{id}*/).then(function (res) {
     console.log(res.data);
     getPersonalData(userId);
   }).catch(function (err) {
@@ -41118,20 +41118,8 @@ function getPersonalData(userID) {
   });
 }
 ;
-function getSharedData(userID) {
-  _axios.default.get( /** Url /Shared/{userID}*/).then(function (res) {
-    console.log(res.data);
-    // return{
-    //     type: GET_SHARED_DATA,
-    //     data: res.data
-    // }
-  }).catch(function (err) {
-    console.log(err);
-  });
-}
-;
 function postTile(userId, tileType, body) {
-  _axios.default.post( /** Url /{userID}/{tileType}, {body} */).then(function (res) {
+  _axios.default.post( /** Url /{tileType}/{userID}/, {body} */).then(function (res) {
     console.log(res.data);
     getPersonalData(userId);
   }).catch(function (err) {
@@ -41140,7 +41128,7 @@ function postTile(userId, tileType, body) {
 }
 ;
 function updateTile(userID, tileType, id, body) {
-  _axios.default.put( /** Url /{userID}/{tileType}/{id}, {body} */).then(function (res) {
+  _axios.default.put( /** Url /{tileType}/{userID}/{id}, {body} */).then(function (res) {
     console.log(res.data);
     getPersonalData(userID);
   }).catch(function (err) {
@@ -41158,6 +41146,20 @@ function updateTheme(color) {
     console.log(err);
   });
 }
+
+// function getSharedData(userID) {
+//     axios.get(/** Url /Shared/{userID}*/)
+//         .then((res) => {
+//             console.log(res.data)
+//             // return{
+//             //     type: GET_SHARED_DATA,
+//             //     data: res.data
+//             // }
+//         })
+//         .catch((err) => {
+//             console.log(err)
+//         })
+// };
 },{"axios":"node_modules/axios/index.js"}],"src/Reducers/reducer.js":[function(require,module,exports) {
 "use strict";
 
@@ -41240,7 +41242,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50312" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59427" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

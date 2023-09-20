@@ -7,8 +7,8 @@ const POST_TILE = "POSTTILE"
 const UPDATE_TILE = "UPDATETILE"
 const UPDATE_THEME = "UPDATETHEME"
 
-function deleteTile(userId, id) {
-    axios.delete(/** Url/{userID}/{id}*/)
+function deleteTile(tileType, userId, tileId) {
+    axios.delete(/** Url/{tileType}/{userId}/{id}*/)
         .then((res) => {
             console.log(res.data)
             getPersonalData(userId)
@@ -32,22 +32,9 @@ function getPersonalData(userID) {
         })
 };
 
-function getSharedData(userID) {
-    axios.get(/** Url /Shared/{userID}*/)
-        .then((res) => {
-            console.log(res.data)
-            // return{
-            //     type: GET_SHARED_DATA,
-            //     data: res.data
-            // }
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-};
 
     function postTile(userId, tileType, body) {
-        axios.post(/** Url /{userID}/{tileType}, {body} */)
+        axios.post(/** Url /{tileType}/{userID}/, {body} */)
             .then((res) => {
                 console.log(res.data)
                 getPersonalData(userId)
@@ -58,32 +45,45 @@ function getSharedData(userID) {
     };
     
 
-function updateTile(userID, tileType ,id, body){
-    axios.put(/** Url /{userID}/{tileType}/{id}, {body} */)
-        .then((res) => {
-            console.log(res.data)
-            getPersonalData(userID)
-        }).catch((err) => {
-            console.log(err)
-        })
-}
+    function updateTile(userID, tileType ,id, body){
+        axios.put(/** Url /{tileType}/{userID}/{id}, {body} */)
+            .then((res) => {
+                console.log(res.data)
+                getPersonalData(userID)
+            }).catch((err) => {
+                console.log(err)
+            })
+    }
 
 
-function updateTheme(color){
-    axios.put(/** Url /{userID}, color */)
-        .then((res) => {
-            console.log(res.data)
-            // return{
-            //     type: UPDATE_THEME,
-            //     theme: res.data.theme
-            // }
-        }).catch((err) => {
-            console.log(err)
-        })
-}
+    function updateTheme(color){
+        axios.put(/** Url /{userID}, color */)
+            .then((res) => {
+                console.log(res.data)
+                // return{
+                //     type: UPDATE_THEME,
+                //     theme: res.data.theme
+                // }
+            }).catch((err) => {
+                console.log(err)
+            })
+    }
 
 
 
 
+// function getSharedData(userID) {
+//     axios.get(/** Url /Shared/{userID}*/)
+//         .then((res) => {
+//             console.log(res.data)
+//             // return{
+//             //     type: GET_SHARED_DATA,
+//             //     data: res.data
+//             // }
+//         })
+//         .catch((err) => {
+//             console.log(err)
+//         })
+// };
 
 
