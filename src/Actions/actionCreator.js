@@ -1,89 +1,54 @@
-import axios from "axios"
+// actionTypes
+export const SET_USER_DATA = 'SET_USER_DATA';
+export const ADD_NEW_NOTE = 'ADD_NEW_NOTE';
+export const UPDATE_NOTE = 'UPDATE_NOTE';
+export const DELETE_NOTE = 'DELETE_NOTE';
+export const ADD_NEW_LIST = 'ADD_NEW_LIST';
+export const DELETE_LIST = 'DELETE_LIST';
+export const ADD_LIST_ITEM = 'ADD_LIST_ITEM';
+export const DELETE_LIST_ITEM = 'DELETE_LIST_ITEM';
+// Define your other action types here
 
-const DELETE_TILE = "DELETETILE"
-const GET_PERSONAL_DATA = "GETPERSONALDATA"
-const GET_SHARED_DATA = "GETSHAREDDATA"
-const POST_TILE = "POSTTILE"
-const UPDATE_TILE = "UPDATETILE"
-const UPDATE_THEME = "UPDATETHEME"
+  
+  // Action creators
+  export const setUserData = (userData) => ({
+    type: SET_USER_DATA,
+    payload: userData,
+  });
+  
+  export const addNewNote = (newNote) => ({
+    type: ADD_NEW_NOTE,
+    payload: newNote,
+  });
+  
+  export const updateNote = (noteId, updatedNote) => ({
+    type: UPDATE_NOTE,
+    payload: { noteId, updatedNote },
+  });
+  
+  export const deleteNote = (noteId) => ({
+    type: DELETE_NOTE,
+    payload: noteId,
+  });
+  
+  export const addNewList = (newList) => ({
+    type: ADD_NEW_LIST,
+    payload: newList,
+  });
 
-function deleteTile(tileType, userId, tileId) {
-    axios.delete(/** Url/{tileType}/{userId}/{id}*/)
-        .then((res) => {
-            console.log(res.data)
-            getPersonalData(userId)
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-}
-
-function getPersonalData(userID) {
-    axios.get(/** Url, /{userID}*/)
-        .then((res) => {
-            console.log(res.data)
-            // return{
-            //     type: GET_PERSONAL_DATA,
-            //     data: res.data
-            // }
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-};
-
-
-    function postTile(userId, tileType, body) {
-        axios.post(/** Url /{tileType}/{userID}/, {body} */)
-            .then((res) => {
-                console.log(res.data)
-                getPersonalData(userId)
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-    };
-    
-
-    function updateTile(userID, tileType ,id, body){
-        axios.put(/** Url /{tileType}/{userID}/{id}, {body} */)
-            .then((res) => {
-                console.log(res.data)
-                getPersonalData(userID)
-            }).catch((err) => {
-                console.log(err)
-            })
-    }
-
-
-    function updateTheme(color){
-        axios.put(/** Url /{userID}, color */)
-            .then((res) => {
-                console.log(res.data)
-                // return{
-                //     type: UPDATE_THEME,
-                //     theme: res.data.theme
-                // }
-            }).catch((err) => {
-                console.log(err)
-            })
-    }
-
-
-
-
-// function getSharedData(userID) {
-//     axios.get(/** Url /Shared/{userID}*/)
-//         .then((res) => {
-//             console.log(res.data)
-//             // return{
-//             //     type: GET_SHARED_DATA,
-//             //     data: res.data
-//             // }
-//         })
-//         .catch((err) => {
-//             console.log(err)
-//         })
-// };
-
-
+  export const deleteList = (listId) => ({
+    type: DELETE_LIST,
+    payload: listId,
+  });
+  
+  export const addListItem = (listId, newItem) => ({
+    type: ADD_LIST_ITEM,
+    payload: { listId, newItem },
+  });
+  
+  export const deleteListItem = (listId, itemIndex) => ({
+    type: DELETE_LIST_ITEM,
+    payload: { listId, itemIndex },
+  });
+  // Define more action creators as needed
+  

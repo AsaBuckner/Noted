@@ -6,7 +6,11 @@ import Login from './Login';
 import SignUp from './Signup';
 import Nav from './Nav'
 
-export default function Home(){
+export default function Home(props){
+
+const {colRef} = props
+
+
   return (
   
     <div className='Wrapper'>
